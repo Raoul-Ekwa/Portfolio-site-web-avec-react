@@ -8,6 +8,8 @@ import {
   FaJsSquare,
   FaHtml5,
   FaDocker,
+  FaPhp,
+  FaShieldAlt,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -15,6 +17,9 @@ import {
   SiPostgresql,
   SiExpress,
   SiTypescript,
+  SiSymfony,
+  SiChartdotjs,
+  SiMysql,
 } from "react-icons/si";
 
 const skills = [
@@ -49,6 +54,18 @@ const skills = [
   },
   { name: "Git", icon: <FaGitAlt className="text-orange-500 text-4xl" /> },
   { name: "Docker", icon: <FaDocker className="text-blue-400 text-4xl" /> },
+  // Ajouts pour BitChest
+  { name: "PHP 8", icon: <FaPhp className="text-purple-600 text-4xl" /> },
+  {
+    name: "Symfony 7",
+    icon: <SiSymfony className="text-indigo-500 text-4xl" />,
+  },
+  {
+    name: "Chart.js",
+    icon: <SiChartdotjs className="text-blue-500 text-4xl" />,
+  },
+  { name: "MySQL", icon: <SiMysql className="text-blue-700 text-4xl" /> },
+  { name: "Sécurité", icon: <FaShieldAlt className="text-red-500 text-4xl" /> },
 ];
 
 const Skills = () => {

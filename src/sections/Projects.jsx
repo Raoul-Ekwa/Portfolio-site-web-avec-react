@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaMobileAlt, FaGlobe } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaMobileAlt,
+  FaGlobe,
+  FaBitcoin,
+} from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
 const projectList = [
@@ -35,6 +41,14 @@ const projectList = [
     demo: "https://drive.google.com/file/d/1ENjyCYJe-e4byxU1OQJkFVMeQ80siEf7/preview",
     icon: <FaNodeJs className="text-green-600 text-3xl" />,
   },
+  {
+    name: "BitChest",
+    description:
+      "💰 Plateforme web Symfony 7 / PHP 8.2 de gestion de crypto-monnaies avec comptes clients et admin, wallet, transactions, graphiques Chart.js et tests exhaustifs.",
+    link: "https://github.com/NzetemMartin/BitChest",
+    demo: "https://drive.google.com/file/d/16AF_O_NqWzMU4U9nFwI3c6QaS9BhaMd3/preview",
+    icon: <FaBitcoin className="text-yellow-500 text-3xl" />,
+  },
 ];
 
 const Projects = () => {
@@ -45,7 +59,7 @@ const Projects = () => {
   const openModal = (url) => {
     setDemoUrl(url);
     setShowModal(true);
-    setLoading(true); // On active le spinner
+    setLoading(true); // Spinner actif
   };
 
   const closeModal = () => {
@@ -58,7 +72,6 @@ const Projects = () => {
       id="projects"
       className="py-20 bg-gradient-to-b from-white to-blue-50 relative"
     >
-      {/* Titre animé */}
       <motion.h2
         className="text-4xl font-extrabold text-center mb-12 text-gray-800"
         initial={{ opacity: 0, y: -30 }}
@@ -68,7 +81,6 @@ const Projects = () => {
         Mes Projets
       </motion.h2>
 
-      {/* Grille de projets */}
       <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
         {projectList.map((project, index) => (
           <motion.div
@@ -110,7 +122,6 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Modale */}
       {showModal && (
         <div
           className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
@@ -120,7 +131,6 @@ const Projects = () => {
             className="bg-white w-[95%] max-w-6xl h-[90%] rounded-lg overflow-hidden shadow-lg relative flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Bouton de fermeture */}
             <button
               onClick={closeModal}
               className="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-2xl z-10"
@@ -128,14 +138,12 @@ const Projects = () => {
               <IoMdClose />
             </button>
 
-            {/* Spinner de chargement */}
             {loading && (
               <div className="absolute inset-0 flex items-center justify-center z-20 bg-black bg-opacity-30">
                 <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-20 w-20"></div>
               </div>
             )}
 
-            {/* Iframe vidéo */}
             <iframe
               src={demoUrl}
               title="Demo Project"
@@ -147,7 +155,6 @@ const Projects = () => {
         </div>
       )}
 
-      {/* Styles du spinner */}
       <style>{`
         .loader {
           border-top-color: #3498db;
